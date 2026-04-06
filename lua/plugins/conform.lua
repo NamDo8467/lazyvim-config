@@ -4,6 +4,7 @@ return {
         formatters_by_ft = {
             typescript = {}, -- Use LSP
             typescriptreact = {}, -- Use LSP
+            ["python"] = { "ruff_format" },
         },
     },
 }

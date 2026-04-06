@@ -1,13 +1,13 @@
 return {
     "hrsh7th/cmp-cmdline",
     dependencies = { "hrsh7th/nvim-cmp" },
-    event = "CmdlineEnter",
+    event = "cmdlineenter",
     config = function()
         local cmp = require("cmp")
 
         cmp.setup.cmdline(":", {
             mapping = {
-                ["<Tab>"] = {
+                ["<tab>"] = {
                     c = function()
                         if cmp.visible() then
                             -- local entry = cmp.get_selected_entry()
@@ -21,7 +21,7 @@ return {
                         end
                     end,
                 },
-                ["<S-Tab>"] = {
+                ["<s-tab>"] = {
                     c = function()
                         if cmp.visible() then
                             cmp.select_prev_item()
@@ -30,10 +30,10 @@ return {
                         end
                     end,
                 },
-                ["<CR>"] = {
+                ["<cr>"] = {
                     c = cmp.mapping.confirm({ select = false }),
                 },
-                ["<C-e>"] = {
+                ["<c-e>"] = {
                     c = cmp.mapping.close(),
                 },
             },
@@ -51,8 +51,8 @@ return {
                 completeopt = "menu,menuone,noselect",
             },
             mapping = cmp.mapping.preset.cmdline({
-                ["<CR>"] = cmp.mapping.confirm({ select = true }), -- select = true auto-picks first
-                ["<Tab>"] = cmp.mapping(function(fallback)
+                ["<cr>"] = cmp.mapping.confirm({ select = true }), -- select = true auto-picks first
+                ["<tab>"] = cmp.mapping(function(fallback)
                     if cmp.visible() then
                         cmp.select_next_item()
                     elseif cmp.get_selected_entry() == nil then
@@ -61,7 +61,7 @@ return {
                         fallback()
                     end
                 end, { "c" }),
-                ["<S-Tab>"] = cmp.mapping(function(fallback)
+                ["<s-tab>"] = cmp.mapping(function(fallback)
                     if cmp.visible() then
                         cmp.select_prev_item()
                     else
