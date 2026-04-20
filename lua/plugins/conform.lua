@@ -2,8 +2,8 @@ return {
     "stevearc/conform.nvim",
     opts = {
         formatters_by_ft = {
-            typescript = {}, -- Use LSP
-            typescriptreact = {}, -- Use LSP
+            typescript = { "prettier" },
+            typescriptreact = { "prettier" },
             ["python"] = { "ruff_format" },
         },
     },
