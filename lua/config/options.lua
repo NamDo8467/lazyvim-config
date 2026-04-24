@@ -8,3 +8,4 @@ vim.opt.foldcolumn = "0"
 vim.opt.swapfile = false
 vim.wo.relativenumber = true
 vim.opt.number = true
+vim.g.autoformat = true
